@@ -1,12 +1,12 @@
-# Overview
-
-<TODO: complete this with an overview of your project>
+# Overview ![Python application test with Github Actions](https://github.com/jameslian147/cicd-project/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
+This is a python project that demostrates the necessary steps in setting up CI CD in Azure and Github actions
 
 ## Project Plan
-<TODO: Project Plan
+Trello board
+https://trello.com/b/j66JLQ23
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+Management Spreadsheet
+https://docs.google.com/spreadsheets/d/1g__ADvqWh5nC4_anMRsUzwtnP_uprrVialXOOlmvjC0/edit?usp=sharing
 
 ## Instructions
 

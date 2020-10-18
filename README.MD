@@ -129,12 +129,11 @@ az webapp log tail -n <appname> --resource-group <resourcegroup>
 
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/output.png?raw=true "Save Pipeline")
 
-## Enhancements
-
-<TODO: A short description of how to improve the project in the future>
 
 ## Demo 
 
+Link to demo
+https://youtu.be/2jvoZ5oRJcs
 
 
 

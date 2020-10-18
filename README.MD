@@ -103,9 +103,14 @@ Port: 443
 {"prediction":[20.35373177134412]}
 ```
 
-* Output of streamed log files from deployed application
+17. to check the logs of your app
+use this command
+```bash
+az webapp log tail -n <appname> --resource-group <resourcegroup>
+```
+* Example Output of streamed log
 
-> 
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/output.png?raw=true "Save Pipeline")
 
 ## Enhancements
 
@@ -113,6 +118,6 @@ Port: 443
 
 ## Demo 
 
-<TODO: Add link Screencast on YouTube>
+
 
 

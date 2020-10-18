@@ -20,11 +20,30 @@ Azure Pipelines works quite similar with Gitactions except we will be doing depl
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
-* Project running on Azure App Service
+### Steps
+1. Go to Azure Portal
 
-* Project cloned into Azure Cloud Shell
+2. Click on Cloud Shell
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/cloud-shell.png?raw=true "Cloud Shell")
+
+3. Clone this project at the cloud shell
+
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/git-status.png?raw=true "Git Status")
+
+4. Build the project 
+
+```bash
+make all
+```
+
+
+
+5. Deploy this project to Azure app services
+
+```bash
+az webapp -n flask-ml-app
+```
 
 * Output of a test run
 

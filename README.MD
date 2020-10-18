@@ -56,6 +56,8 @@ az webapp up -n flask-ml-app
 
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/az-app-services.png?raw=true "App Services")
 
+6. Delete the 
+
 6. Go to Azure Pipelines
 https://dev.azure.com
 
@@ -74,12 +76,15 @@ and go to Settings >> Pipelines >> Service Connections
 11. Select your repository
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/select-repo.png?raw=true "Select Repo")
 
-12. Review and save the pipeline yml
+12. Python to Linux Web App on Azure
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/selet-step-azure.png?raw=true "Select Step")
+
+13. Review and save the pipeline yml
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/save-pipeline.png?raw=true "Save Pipeline")
 
+14. App Deployment will be shown with pipeline
 
 
-* Running Azure App Service from Azure Pipelines automatic deployment
 
 * Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
 The output should look similar to this:

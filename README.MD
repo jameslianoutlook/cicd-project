@@ -31,23 +31,53 @@ Azure Pipelines works quite similar with Gitactions except we will be doing depl
 
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/git-status.png?raw=true "Git Status")
 
-4. Build the project 
+4. Setup a virtual environment 
+
+```bash
+make setup
+source ~/.udacity-devops/bin/activate
+```
+
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/setenv.png?raw=true "Set Environment")
+
+5. Build the project
 
 ```bash
 make all
 ```
 
-
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/build-all.png?raw=true "Build All")
 
 5. Deploy this project to Azure app services
 
 ```bash
-az webapp -n flask-ml-app
+az webapp up -n flask-ml-app
 ```
 
-* Output of a test run
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/az-app-services.png?raw=true "App Services")
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+6. Go to Azure Pipelines
+https://dev.azure.com
+
+7. Create a new project
+and go to Settings >> Pipelines >> Service Connections
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/new-project.png?raw=true "New Project")
+
+8. Select Azure Resource Manager >> Service Principal (automatic)
+
+9. Select your Azure Subscription and Resource Group and a new Service Name
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/new-service-connection.png?raw=true "Service Connection")
+
+10. Go to pipelines >> Create Pipeline
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/create-pipeline.png?raw=true "Create Pipeline")
+
+11. Select your repository
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/select-repo.png?raw=true "Select Repo")
+
+12. Review and save the pipeline yml
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/save-pipeline.png?raw=true "Save Pipeline")
+
+
 
 * Running Azure App Service from Azure Pipelines automatic deployment
 

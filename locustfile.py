@@ -25,4 +25,4 @@ class QuickstartUser(HttpUser):
                                             "LSTAT":{
                                                 "0":4.98
                                             }
-                                            })
+                                            }) 

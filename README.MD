@@ -18,9 +18,26 @@ This is the desired setup we want to do at the end of this project. When there a
 
 Azure Pipelines works quite similar with Gitactions except we will be doing deployment to app services after a successful build.
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+### Prerequisites
+Please remember to fork this project under your account as it requires some modifications on your end to enable github actions and azure pipelines
 
-### Steps
+### GitAction Steps
+1. Go to the repo page and click Actions
+
+2. Click on Create new workflow >> set up a workflow yourself
+
+3. Copy the contents of ex-github.yml and paste it on the edit box
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/github-flow.png?raw=true "Cloud Shell")
+
+4. Click `Start Commit` >> create new file
+
+5. Go back to `Actions` and you will see a new gitflow
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/github-flow-actions.png?raw=true "Cloud Shell")
+
+6. Now your project will detect any changes on `master` branch and start build
+
+
+### Azure Pipeline Steps
 1. Go to Azure Portal
 
 2. Click on Cloud Shell
@@ -48,10 +65,10 @@ make all
 
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/build-all.png?raw=true "Build All")
 
-5. Deploy this project to Azure app services
+5. Deploy this project using the embedded shell script to Azure app services
 
 ```bash
-az webapp up -n flask-ml-app
+./deploy.sh
 ```
 
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/az-app-services.png?raw=true "App Services")
@@ -103,9 +120,14 @@ Port: 443
 {"prediction":[20.35373177134412]}
 ```
 
-* Output of streamed log files from deployed application
+17. to check the logs of your app
+use this command
+```bash
+az webapp log tail -n <appname> --resource-group <resourcegroup>
+```
+* Example Output of streamed log
 
-> 
+![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/output.png?raw=true "Save Pipeline")
 
 ## Enhancements
 
@@ -113,6 +135,6 @@ Port: 443
 
 ## Demo 
 
-<TODO: Add link Screencast on YouTube>
+
 
 

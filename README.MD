@@ -14,27 +14,12 @@ https://docs.google.com/spreadsheets/d/1g__ADvqWh5nC4_anMRsUzwtnP_uprrVialXOOlmv
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/architecture.png?raw=true "Architecture")
 
 ### In brief
-This is the desired setup we want to do at the end of this project. When there are changes to the git repo, eg. file modification, Gitactions will auto run the Makefile all thru the file .github/workflows/pythonapp.yml.
-
-Azure Pipelines works quite similar with Gitactions except we will be doing deployment to app services after a successful build.
+This project demostrates the steps necessary to setup a pipeline in azure devops against a git repository. The outcome will have a azure pipeline deploying new changes upon new commits made in the git repository
 
 ### Prerequisites
-Please remember to fork this project under your account as it requires some modifications on your end to enable github actions and azure pipelines
-
-### GitAction Steps
-1. Go to the repo page and click Actions
-
-2. Click on Create new workflow >> set up a workflow yourself
-
-3. Copy the contents of ex-github.yml and paste it on the edit box
-![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/github-flow.png?raw=true "Cloud Shell")
-
-4. Click `Start Commit` >> create new file
-
-5. Go back to `Actions` and you will see a new gitflow
-![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/github-flow-actions.png?raw=true "Cloud Shell")
-
-6. Now your project will detect any changes on `master` branch and start build
+Azure Portal Account
+Azure Dev Account
+Git project forked from this project
 
 
 ### Azure Pipeline Steps
@@ -48,34 +33,17 @@ Please remember to fork this project under your account as it requires some modi
 
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/git-status.png?raw=true "Git Status")
 
-4. Setup a virtual environment 
+
+4. Authorize App Service. Navigate to the folder inside and run the following command
 
 ```bash
-make setup
-source ~/.udacity-devops/bin/activate
+az webapp up -n <your-appservice>
 ```
-
-![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/setenv.png?raw=true "Set Environment")
-
-5. Build the project
-
-```bash
-make all
-```
-
-![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/build-all.png?raw=true "Build All")
-
-5. Deploy this project using the embedded shell script to Azure app services
-
-```bash
-./deploy.sh
-```
+Change <your-appservice> to a name for your app service that's unique across Azure. Typically, you use a personal or company name along with an app identifier, such as <your-name>-flaskpipelines. The app URL becomes <your-appservice>.azurewebsites.net.
 
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/az-app-services.png?raw=true "App Services")
 
-6. Delete the azure-pipelines.yml file in your forked repo and commit the changes
-
-7. Go to Azure Pipelines
+5. Go to Azure Pipelines
 https://dev.azure.com
 
 8. Create a new project
@@ -102,7 +70,6 @@ and go to Settings >> Pipelines >> Service Connections
 15. App Deployment will be shown with pipeline
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/deployment-success.png?raw=true "Save Pipeline")
 
-
 16. As your app is up. Go to your repo in Azure Cloud Shell and copy your app name. eg. flask-ml-ap.azurewebsites.net
 Edit it and replace it in make_predict_azure_app.sh
 
@@ -128,6 +95,11 @@ az webapp log tail -n <appname> --resource-group <resourcegroup>
 * Example Output of streamed log
 
 ![alt text](https://github.com/jameslian147/cicd-project/blob/master/images/output.png?raw=true "Save Pipeline")
+
+
+## Enhancements
+To organise shell scripts into one folder
+To provide visual ui for showing prediction
 
 
 ## Demo 
